@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World</title>
+  <script src="http://fb.me/react-0.12.2.js"></script>
+  <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+</head>
+<body>
+<script type="text/jsx">
+  // JSX style
+  var App = React.createClass({
+    render: function () {
+      return <h1>Hello World!</h1>;
+    }
+  });
+
+  // Using react's dom methods
+  var App2 = React.createClass({
+    render: function () {
+      return React.DOM.h1(null, 'Hi there!');
+    }
+  });
+
+  // Using react's create element
+  var App3 = React.createClass({
+    render: function () {
+      return React.createElement('h1', null, 'Yo');
+    }
+  });
+
+  React.render(<App />, document.body);
+  React.render(App2(), document.body);
+  React.render(React.createElement(App3), document.body);
+</script>
+</body>
+</html>
